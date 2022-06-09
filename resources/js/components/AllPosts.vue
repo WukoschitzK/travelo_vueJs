@@ -1,43 +1,33 @@
 <template>
     <div class="row">
 
-        <h2>TEST List Posts</h2>
+        <h2>What's new!</h2>
+        <p>Die letzten Einträge bei Travelo.</p>
 
-<!--        <p>{{tasks}}</p>-->
+        <div v-for="(post, i) in posts" :key=i>
+            <div>
+                <div>{{ post.country }}</div>
+                <div>{{ post.city }}</div>
+                <div>{{ post.title }}</div>
+                <div>{{ post.subtitle }}</div>
+            </div>
 
-        <div v-for="post in posts">
-            {{post.title}}
+            <img v-if="post.post_images.length" :src="post.post_images[0].post_image_path">
 
+            <svg @click="viewPost(i)" xmlns="http://www.w3.org/2000/svg" width="39" height="27" viewBox="0 0 39 27">
+                <path id="Polygon_8" data-name="Polygon 8" d="M19.5,0,39,27H0Z" transform="translate(39 27) rotate(180)"/>
+            </svg>
 
-        </div>
+            <div v-if="currentPost.id == post.id">
+                <div v-if="postDialogVisible">
+                    <div v-for="(img, i) in post.post_images" :key=i>
+                        <img :src="img.post_image_path" alt="">
+                    </div>
 
-
-        <div class="col-md-6" v-for="(post, i) in posts" :key=i>
-            <div class="card mt-4">
-                <img v-if="post.post_images.length" class="card-img-top" :src="post.post_images[0].post_image_path">
-                <div class="card-body">
-                    <p class="card-text"><strong>{{ post.title }}</strong> <br>
-                        {{ truncateText(post.body) }}
-                    </p>
+                    <p>{{ currentPost.body }}</p>
                 </div>
-                <button class="btn btn-success m-2" @click="viewPost(i)">View Post</button>
             </div>
         </div>
-        <el-dialog v-if="currentPost" :visible.sync="postDialogVisible" width="40%">
-      <span>
-        <h3>{{ currentPost.title }}</h3>
-        <div class="row">
-          <div class="col-md-6" v-for="(img, i) in currentPost.post_images" :key=i>
-            <img :src="img.post_image_path" class="img-thumbnail" alt="">
-          </div>
-        </div>
-        <hr>
-        <p>{{ currentPost.body }}</p>
-      </span>
-            <span slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="postDialogVisible = false">Okay</el-button>
-      </span>
-        </el-dialog>
     </div>
 </template>
 
@@ -70,7 +60,12 @@ export default {
         viewPost(postIndex) {
             const post = this.posts[postIndex];
             this.currentPost = post;
-            this.postDialogVisible = true;
+
+            if (!this.postDialogVisible) {
+                this.postDialogVisible = true;
+            } else {
+                this.postDialogVisible = false;
+            }
         },
         getPosts() {
             axios

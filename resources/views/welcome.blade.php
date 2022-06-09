@@ -10,6 +10,7 @@
 <body>
 <div>
 
+    <img src="../img/header-img.jpg" alt="car">
     <div id="app">
         <all-posts></all-posts>
 {{--        <create-post></create-post>--}}

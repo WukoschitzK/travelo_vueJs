@@ -124,7 +124,7 @@ export default {
             $.each(this.imageList, function (key, image) {
                 formData.append(`images[${key}]`, image)
             })
-            api.post('/post/create_post', formData, {
+            api.post('/post/create-post', formData, {
                     headers: { 'Content-Type': 'multipart/form-data' }
                 })
                 .then((res) => {
