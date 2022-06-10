@@ -1,0 +1,17 @@
+body {
+    @apply font-sans;
+}
+
+p {
+    color:red;
+}
+
+html {
+    font-size: 1.25rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}

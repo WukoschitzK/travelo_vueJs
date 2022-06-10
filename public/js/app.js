@@ -3878,6 +3878,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3894,6 +3907,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     this.$store.dispatch('getAllPosts');
   },
   methods: {
+    splitDate: function splitDate(date) {
+      var arr1 = date.split('-');
+      var arr2 = arr1[0].split('0');
+      var newDate = {
+        year: arr2[1],
+        day: arr1[1]
+      };
+      return newDate;
+    },
     truncateText: function truncateText(text) {
       if (text.length > 24) {
         return "".concat(text.substr(0, 24), "...");
@@ -84498,76 +84520,121 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "row" },
     [
-      _c("h2", [_vm._v("What's new!")]),
+      _c("h2", { staticClass: "text-yellow font-bold text-6xl" }, [
+        _vm._v("What's new!"),
+      ]),
       _vm._v(" "),
       _c("p", [_vm._v("Die letzten Einträge bei Travelo.")]),
       _vm._v(" "),
       _vm._l(_vm.posts, function (post, i) {
         return _c("div", { key: i }, [
-          _c("div", [
-            _c("div", [_vm._v(_vm._s(post.country))]),
-            _vm._v(" "),
-            _c("div", [_vm._v(_vm._s(post.city))]),
-            _vm._v(" "),
-            _c("div", [_vm._v(_vm._s(post.title))]),
-            _vm._v(" "),
-            _c("div", [_vm._v(_vm._s(post.subtitle))]),
-          ]),
-          _vm._v(" "),
-          post.post_images.length
-            ? _c("img", { attrs: { src: post.post_images[0].post_image_path } })
-            : _vm._e(),
-          _vm._v(" "),
           _c(
-            "svg",
-            {
-              attrs: {
-                xmlns: "http://www.w3.org/2000/svg",
-                width: "39",
-                height: "27",
-                viewBox: "0 0 39 27",
-              },
-              on: {
-                click: function ($event) {
-                  return _vm.viewPost(i)
-                },
-              },
-            },
+            "div",
+            { staticClass: "grid grid-cols-12 divide-y divide-y-reverse" },
             [
-              _c("path", {
-                attrs: {
-                  id: "Polygon_8",
-                  "data-name": "Polygon 8",
-                  d: "M19.5,0,39,27H0Z",
-                  transform: "translate(39 27) rotate(180)",
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "divide-y col-span-1 text-center font-bold text-2xl px-8",
                 },
-              }),
+                [
+                  _c("div", [
+                    _vm._v(_vm._s(_vm.splitDate(post.created_at).day)),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _vm._v(_vm._s(_vm.splitDate(post.created_at).year)),
+                  ]),
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-span-5 flex justify-between" }, [
+                _c("div", [
+                  _c("div", { staticClass: "font-bold text-xs" }, [
+                    _c("div", [
+                      _vm._v(_vm._s(post.country) + " " + _vm._s(post.city)),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  post.post_images.length
+                    ? _c("img", {
+                        attrs: { src: post.post_images[0].post_image_path },
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "font-bold text-xl" }, [
+                    _vm._v(_vm._s(post.title)),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "font-light" }, [
+                    _vm._v(_vm._s(post.subtitle)),
+                  ]),
+                  _vm._v(" "),
+                  _vm.currentPost.id == post.id
+                    ? _c("div", [
+                        _vm.postDialogVisible
+                          ? _c(
+                              "div",
+                              [
+                                _vm._l(
+                                  _vm.currentPost.post_images,
+                                  function (img, i) {
+                                    return _c("div", { key: i }, [
+                                      _c("img", {
+                                        attrs: {
+                                          src: img.post_image_path,
+                                          alt: "",
+                                        },
+                                      }),
+                                    ])
+                                  }
+                                ),
+                                _vm._v(" "),
+                                _c("p", [_vm._v(_vm._s(_vm.currentPost.body))]),
+                              ],
+                              2
+                            )
+                          : _vm._e(),
+                      ])
+                    : _vm._e(),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "svg",
+                  {
+                    staticClass: "self-end w-5",
+                    class: {
+                      "fill-yellow transform rotate-180 transition duration-500 ease-in-out":
+                        _vm.postDialogVisible,
+                    },
+                    attrs: {
+                      xmlns: "http://www.w3.org/2000/svg",
+                      width: "39",
+                      height: "27",
+                      viewBox: "0 0 39 27",
+                    },
+                    on: {
+                      click: function ($event) {
+                        return _vm.viewPost(i)
+                      },
+                    },
+                  },
+                  [
+                    _c("path", {
+                      attrs: {
+                        id: "Polygon_8",
+                        "data-name": "Polygon 8",
+                        d: "M19.5,0,39,27H0Z",
+                        transform: "translate(39 27) rotate(180)",
+                      },
+                    }),
+                  ]
+                ),
+              ]),
             ]
           ),
-          _vm._v(" "),
-          _vm.currentPost.id == post.id
-            ? _c("div", [
-                _vm.postDialogVisible
-                  ? _c(
-                      "div",
-                      [
-                        _vm._l(post.post_images, function (img, i) {
-                          return _c("div", { key: i }, [
-                            _c("img", {
-                              attrs: { src: img.post_image_path, alt: "" },
-                            }),
-                          ])
-                        }),
-                        _vm._v(" "),
-                        _c("p", [_vm._v(_vm._s(_vm.currentPost.body))]),
-                      ],
-                      2
-                    )
-                  : _vm._e(),
-              ])
-            : _vm._e(),
         ])
       }),
     ],
