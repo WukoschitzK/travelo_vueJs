@@ -9,25 +9,25 @@
 </head>
 <body>
 <div>
-    <div class="flex justify-between items-center">
+    <div class="lg:flex flex-row-reverse justify-between items-center min-h-screen">
+        <div class='bg-black bg-opacity-25 h-72 md:h-96 lg:min-h-screen lg:w-4/5 relative mb-9'>
+            <img src="../img/header-img.jpg" alt="car" class="w-full h-full object-cover absolute object-left mix-blend-overlay">
+        </div>
 
-
-        <div class="">
-            <h1 class="font-bold text-yellow text-6xl">Bist du auch
+        <div class="pl-8 md:pl-16 lg:pl-28 lg:pr-32">
+            <h1 class="font-bold text-yellow text-4xl md:text-6xl mb-2.5">Bist du auch
                 Travelo?</h1>
-            <p class="text-5xl font-light">Teile dein Erlebnis mit
+            <p class="text-3xl md:text-4xl lg:text-5xl font-light mb-9">Teile dein Erlebnis mit
                 der ganzen Welt.</p>
-            <p class="text-3xl font-light">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
+            <p class="text-xl md:text-3xl font-light">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
         </div>
-        <div class='bg-black bg-opacity-25 min-h-screen w-3/6 relative'>
-                <img src="../img/header-img.jpg" alt="car" class="w-full h-full object-cover absolute mix-blend-overlay">
-        </div>
+
 
     </div>
 {{--    <img src="../img/header-img.jpg" alt="car">--}}
-    <div id="app">
+    <div id="app" class="px-8 md:px-16 lg:px-28">
         <all-posts></all-posts>
-{{--        <create-post></create-post>--}}
+        <create-post></create-post>
     </div>
 </div>
 </body>

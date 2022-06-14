@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('body');
             $table->string('country');
             $table->string('city');
+            $table->string('image_path')->nullable();
             $table->timestamps();
         });
     }

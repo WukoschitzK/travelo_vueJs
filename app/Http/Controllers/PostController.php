@@ -32,23 +32,41 @@ class PostController extends Controller
 //        $post->city = $request->get('city');
 //        $post->save();
 
-        $post = Post::create([
-            'title' => $request->title,
-            'subtitle' => $request->subtitle,
-            'body' => $request->body,
-            'country' => $request->country,
-            'city' => $request->city,
-        ]);
+//        $post = Post::create([
+//            'title' => $request->title,
+//            'subtitle' => $request->subtitle,
+//            'body' => $request->body,
+//            'country' => $request->country,
+//            'city' => $request->city,
+//        ]);
 
-        $images = $request->images;
+//        $images = $request->images;
+//
+//        if($request->images != null) {
+//            foreach($images as $image) {
+//                $imagePath = Storage::disk('uploads')->put('posts/' . $post->id, $image);
+//                PostImage::create([
+//                    'post_image_path' => '/uploads/' . $imagePath,
+//                    'post_id' => $post->id
+//                ]);
+//            }
+//        }
 
-        foreach($images as $image) {
-            $imagePath = Storage::disk('uploads')->put('posts/' . $post->id, $image);
-            PostImage::create([
-                'post_image_path' => '/uploads/' . $imagePath,
-                'post_id' => $post->id
-            ]);
+
+        $post = new Post();
+        $post->fill($request->all());
+
+        //image upload
+
+        if ($image = $request->file('image')) {
+
+            $name = Str::random(16) . '.' . $image->getClientOriginalExtension();
+            $image->storePubliclyAs('public/images/recipe_images', $name);
+            $post->image_path = $name;
         }
+
+        $post->save();
+
 
         return response()->json($post);
     }
