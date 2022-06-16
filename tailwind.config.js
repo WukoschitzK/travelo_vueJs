@@ -13,6 +13,10 @@ module.exports = {
             fontFamily: {
                 body: ["Poppins", "Arial", "sans-serif"],
             },
+            maxWidth: {
+                '1/2': '50%',
+                '2/6': '33%'
+            }
         }
     },
   plugins: [],

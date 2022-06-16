@@ -7,37 +7,62 @@
         </svg>
 
         <h2 class="text-yellow font-bold text-4xl lg:text-6xl">Dein Eintrag zählt.</h2>
-        <p class="text-2xl font-light">Erzähl Travelo deine Geschichte.</p>
+        <p class="text-2xl font-light mb-11 md:mb-28 lg:mb-36">Erzähl Travelo deine Geschichte.</p>
 
 
         <div>
-            <form @submit.prevent class="lg:flex w-full ">
+            <form @submit.prevent class="lg:flex w-full flex-row-reverse justify-between">
+
+                <div class="m-4 lg:w-2/5">
+                    <label class="inline-block mb-2 text-gray-500">Upload
+                        Image(jpg,png)</label>
+                    <div class="flex items-center justify-center w-full">
+                        <label
+                            class="flex flex-col w-full h-32 border-4 border-dashed hover:bg-gray-100 hover:border-gray-300">
+                            <div class="relative flex flex-col items-center justify-center pt-7">
+                                <img id="preview" class="absolute inset-0 w-full h-32">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     class="w-12 h-12 text-gray-400 group-hover:text-gray-600" viewBox="0 0 20 20"
+                                     fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                          d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                                          clip-rule="evenodd" />
+                                </svg>
+                                <p class="pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600">
+                                    Select a photo</p>
+                            </div>
+
+                            <input type="file" class="opacity-0" accept="image/*" @change="showPreview(event)" />
+                        </label>
+                    </div>
+                </div>
+
                 <div class="lg:w-2/5">
-                    <div>
-                        <label for="title">Title</label>
+                    <div class="flex flex-col md:flex-row mb-4">
+                        <label for="title" class="md:w-20">Title</label>
                         <input
                             v-model="newPost.title"
                             id="title"
                             type="text"
-                            placeholder="Post Title"
+                            class="border-b-2 pl-2 pb-0.5"
                         >
                     </div>
-                    <div>
-                        <label for="subtitle">Subtitle</label>
+                    <div class="flex flex-col md:flex-row mb-4">
+                        <label for="subtitle" class="md:w-20">Subtitle</label>
                         <input
                             v-model="newPost.subtitle"
                             id="subtitle"
                             type="text"
-                            placeholder="Post Subtitle"
                             required
+                            class="border-b-2 pl-2 pb-0.5 pt-2 md:pt-0"
                         >
                     </div>
-                    <div>
-                        <label for="post-content">Post Body</label>
-                        <textarea id="body" v-model="newPost.body" type="text" rows="5" required />
+                    <div class="flex flex-col md:flex-row mb-4">
+                        <label for="post-content" class="md:w-20">Post Body</label>
+                        <textarea id="body" v-model="newPost.body" type="text" rows="5" required class="border-b-2"/>
                     </div>
 
-                    <div>
+                    <div class="flex flex-col md:flex-row mb-4">
                         <label for="country">Country</label>
                         <input
                             v-model="newPost.country"
@@ -45,9 +70,10 @@
                             type="text"
                             placeholder="Post Country"
                             required
+                            class="border-b-2"
                         >
                     </div>
-                    <div>
+                    <div class="flex flex-col md:flex-row mb-4">
                         <label for="city">City</label>
                         <input
                             v-model="newPost.city"
@@ -55,6 +81,7 @@
                             type="text"
                             placeholder="Post City"
                             required
+                            class="border-b-2"
                         >
                     </div>
                 </div>
@@ -83,29 +110,7 @@
 <!--                <input name="image" type="file" id="imageUpload" accept=".png, .jpg, .jpeg" />-->
 <!--                <label for="imageUpload"></label>-->
 
-                <div class="m-4 lg:w-2/5">
-                    <label class="inline-block mb-2 text-gray-500">Upload
-                        Image(jpg,png)</label>
-                    <div class="flex items-center justify-center w-full">
-                        <label
-                            class="flex flex-col w-full h-32 border-4 border-dashed hover:bg-gray-100 hover:border-gray-300">
-                            <div class="relative flex flex-col items-center justify-center pt-7">
-                                <img id="preview" class="absolute inset-0 w-full h-32">
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                     class="w-12 h-12 text-gray-400 group-hover:text-gray-600" viewBox="0 0 20 20"
-                                     fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                          d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-                                          clip-rule="evenodd" />
-                                </svg>
-                                <p class="pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600">
-                                    Select a photo</p>
-                            </div>
 
-                            <input type="file" class="opacity-0" accept="image/*" @change="showPreview(event)" />
-                        </label>
-                    </div>
-                </div>
 
             </form>
         </div>

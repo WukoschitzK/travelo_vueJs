@@ -25,7 +25,7 @@
 
     </div>
 {{--    <img src="../img/header-img.jpg" alt="car">--}}
-    <div id="app" class="px-8 md:px-16 lg:px-28">
+    <div id="app" class="pt-14 md:pt-20 lg:pt-28 px-8 md:px-16 lg:px-28">
         <all-posts></all-posts>
         <create-post></create-post>
     </div>

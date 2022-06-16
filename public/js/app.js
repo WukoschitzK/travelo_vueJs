@@ -3897,6 +3897,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3967,6 +3969,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+//
+//
+//
+//
+//
 //
 //
 //
@@ -84454,31 +84461,32 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("h2", { staticClass: "text-yellow font-bold text-4xl lg:text-6xl" }, [
-        _vm._v("What's new!"),
-      ]),
-      _vm._v(" "),
-      _c("p", { staticClass: "text-2xl font-light mb-16 md:mb-28 lg:mb-36" }, [
-        _vm._v("Die letzten Einträge bei Travelo."),
-      ]),
-      _vm._v(" "),
+  return _c("div", [
+    _c("h2", { staticClass: "text-yellow font-bold text-4xl lg:text-6xl" }, [
+      _vm._v("What's new!"),
+    ]),
+    _vm._v(" "),
+    _c("p", { staticClass: "text-2xl font-light mb-11 md:mb-28 lg:mb-36" }, [
+      _vm._v("Die letzten Einträge bei Travelo."),
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "xl:flex flex-wrap" },
       _vm._l(_vm.posts, function (post, i) {
-        return _c("div", { key: i }, [
+        return _c("div", { key: i, staticClass: "xl:max-w-1/2" }, [
           _c(
             "div",
             {
               staticClass:
-                "md:grid grid-cols-12 gap-4 divide-y divide-y-reverse mb-9",
+                "grid grid-cols-12 gap-4 divide-y divide-y-reverse mb-9 xl:px-11",
             },
             [
               _c(
                 "div",
                 {
                   staticClass:
-                    "w-1/5 md:w-full divide-y col-span-2 xl:col-span-1 text-center font-bold text-2xl md:px-4 lg:px-6",
+                    "w-1/5 md:w-full divide-y col-span-2 xl:col-span-2 text-center font-bold text-2xl md:px-4 lg:px-6",
                 },
                 [
                   _c("div", [
@@ -84494,7 +84502,8 @@ var render = function () {
               _c(
                 "div",
                 {
-                  staticClass: "col-span-10 lg:col-span-5 flex justify-between",
+                  staticClass:
+                    "col-span-10 xl:col-span-10 flex justify-between",
                 },
                 [
                   _c("div", [
@@ -84570,6 +84579,10 @@ var render = function () {
                                     }
                                   ),
                                   _vm._v(" "),
+                                  _c("h3", { staticClass: "font-bold" }, [
+                                    _vm._v("Die Story"),
+                                  ]),
+                                  _vm._v(" "),
                                   _c("p", [
                                     _vm._v(_vm._s(_vm.currentPost.body)),
                                   ]),
@@ -84586,9 +84599,9 @@ var render = function () {
           ),
         ])
       }),
-    ],
-    2
-  )
+      0
+    ),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -84649,7 +84662,7 @@ var render = function () {
       _vm._v("Dein Eintrag zählt."),
     ]),
     _vm._v(" "),
-    _c("p", { staticClass: "text-2xl font-light" }, [
+    _c("p", { staticClass: "text-2xl font-light mb-11 md:mb-28 lg:mb-36" }, [
       _vm._v("Erzähl Travelo deine Geschichte."),
     ]),
     _vm._v(" "),
@@ -84657,7 +84670,7 @@ var render = function () {
       _c(
         "form",
         {
-          staticClass: "lg:flex w-full ",
+          staticClass: "lg:flex w-full flex-row-reverse justify-between",
           on: {
             submit: function ($event) {
               $event.preventDefault()
@@ -84665,150 +84678,6 @@ var render = function () {
           },
         },
         [
-          _c("div", { staticClass: "lg:w-2/5" }, [
-            _c("div", [
-              _c("label", { attrs: { for: "title" } }, [_vm._v("Title")]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.newPost.title,
-                    expression: "newPost.title",
-                  },
-                ],
-                attrs: { id: "title", type: "text", placeholder: "Post Title" },
-                domProps: { value: _vm.newPost.title },
-                on: {
-                  input: function ($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.newPost, "title", $event.target.value)
-                  },
-                },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c("label", { attrs: { for: "subtitle" } }, [_vm._v("Subtitle")]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.newPost.subtitle,
-                    expression: "newPost.subtitle",
-                  },
-                ],
-                attrs: {
-                  id: "subtitle",
-                  type: "text",
-                  placeholder: "Post Subtitle",
-                  required: "",
-                },
-                domProps: { value: _vm.newPost.subtitle },
-                on: {
-                  input: function ($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.newPost, "subtitle", $event.target.value)
-                  },
-                },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c("label", { attrs: { for: "post-content" } }, [
-                _vm._v("Post Body"),
-              ]),
-              _vm._v(" "),
-              _c("textarea", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.newPost.body,
-                    expression: "newPost.body",
-                  },
-                ],
-                attrs: { id: "body", type: "text", rows: "5", required: "" },
-                domProps: { value: _vm.newPost.body },
-                on: {
-                  input: function ($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.newPost, "body", $event.target.value)
-                  },
-                },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c("label", { attrs: { for: "country" } }, [_vm._v("Country")]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.newPost.country,
-                    expression: "newPost.country",
-                  },
-                ],
-                attrs: {
-                  id: "country",
-                  type: "text",
-                  placeholder: "Post Country",
-                  required: "",
-                },
-                domProps: { value: _vm.newPost.country },
-                on: {
-                  input: function ($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.newPost, "country", $event.target.value)
-                  },
-                },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c("label", { attrs: { for: "city" } }, [_vm._v("City")]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.newPost.city,
-                    expression: "newPost.city",
-                  },
-                ],
-                attrs: {
-                  id: "city",
-                  type: "text",
-                  placeholder: "Post City",
-                  required: "",
-                },
-                domProps: { value: _vm.newPost.city },
-                on: {
-                  input: function ($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.newPost, "city", $event.target.value)
-                  },
-                },
-              }),
-            ]),
-          ]),
-          _vm._v(" "),
           _c("div", { staticClass: "m-4 lg:w-2/5" }, [
             _c("label", { staticClass: "inline-block mb-2 text-gray-500" }, [
               _vm._v("Upload\n                        Image(jpg,png)"),
@@ -84887,6 +84756,158 @@ var render = function () {
                 ),
               ]
             ),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "lg:w-2/5" }, [
+            _c("div", { staticClass: "flex flex-col md:flex-row mb-4" }, [
+              _c("label", { staticClass: "md:w-20", attrs: { for: "title" } }, [
+                _vm._v("Title"),
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.newPost.title,
+                    expression: "newPost.title",
+                  },
+                ],
+                staticClass: "border-b-2 pl-2 pb-0.5",
+                attrs: { id: "title", type: "text" },
+                domProps: { value: _vm.newPost.title },
+                on: {
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.newPost, "title", $event.target.value)
+                  },
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "flex flex-col md:flex-row mb-4" }, [
+              _c(
+                "label",
+                { staticClass: "md:w-20", attrs: { for: "subtitle" } },
+                [_vm._v("Subtitle")]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.newPost.subtitle,
+                    expression: "newPost.subtitle",
+                  },
+                ],
+                staticClass: "border-b-2 pl-2 pb-0.5 pt-2 md:pt-0",
+                attrs: { id: "subtitle", type: "text", required: "" },
+                domProps: { value: _vm.newPost.subtitle },
+                on: {
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.newPost, "subtitle", $event.target.value)
+                  },
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "flex flex-col md:flex-row mb-4" }, [
+              _c(
+                "label",
+                { staticClass: "md:w-20", attrs: { for: "post-content" } },
+                [_vm._v("Post Body")]
+              ),
+              _vm._v(" "),
+              _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.newPost.body,
+                    expression: "newPost.body",
+                  },
+                ],
+                staticClass: "border-b-2",
+                attrs: { id: "body", type: "text", rows: "5", required: "" },
+                domProps: { value: _vm.newPost.body },
+                on: {
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.newPost, "body", $event.target.value)
+                  },
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "flex flex-col md:flex-row mb-4" }, [
+              _c("label", { attrs: { for: "country" } }, [_vm._v("Country")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.newPost.country,
+                    expression: "newPost.country",
+                  },
+                ],
+                staticClass: "border-b-2",
+                attrs: {
+                  id: "country",
+                  type: "text",
+                  placeholder: "Post Country",
+                  required: "",
+                },
+                domProps: { value: _vm.newPost.country },
+                on: {
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.newPost, "country", $event.target.value)
+                  },
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "flex flex-col md:flex-row mb-4" }, [
+              _c("label", { attrs: { for: "city" } }, [_vm._v("City")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.newPost.city,
+                    expression: "newPost.city",
+                  },
+                ],
+                staticClass: "border-b-2",
+                attrs: {
+                  id: "city",
+                  type: "text",
+                  placeholder: "Post City",
+                  required: "",
+                },
+                domProps: { value: _vm.newPost.city },
+                on: {
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.newPost, "city", $event.target.value)
+                  },
+                },
+              }),
+            ]),
           ]),
         ]
       ),
