@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <h2 class="text-yellow font-bold text-4xl lg:text-6xl">What's new!</h2>
+        <h2 class="text-yellow font-bold text-4xl lg:text-6xl mb-2.5">What's new!</h2>
         <p class="text-2xl font-light mb-11 md:mb-28 lg:mb-36">Die letzten Einträge bei Travelo.</p>
 
         <div class="xl:flex flex-wrap">

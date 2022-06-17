@@ -4106,6 +4106,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'create-post',
@@ -84462,9 +84463,11 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h2", { staticClass: "text-yellow font-bold text-4xl lg:text-6xl" }, [
-      _vm._v("What's new!"),
-    ]),
+    _c(
+      "h2",
+      { staticClass: "text-yellow font-bold text-4xl lg:text-6xl mb-2.5" },
+      [_vm._v("What's new!")]
+    ),
     _vm._v(" "),
     _c("p", { staticClass: "text-2xl font-light mb-11 md:mb-28 lg:mb-36" }, [
       _vm._v("Die letzten Einträge bei Travelo."),
@@ -84658,9 +84661,11 @@ var render = function () {
         )
       : _vm._e(),
     _vm._v(" "),
-    _c("h2", { staticClass: "text-yellow font-bold text-4xl lg:text-6xl" }, [
-      _vm._v("Dein Eintrag zählt."),
-    ]),
+    _c(
+      "h2",
+      { staticClass: "text-yellow font-bold text-4xl lg:text-6xl mb-2.5" },
+      [_vm._v("Dein Eintrag zählt.")]
+    ),
     _vm._v(" "),
     _c("p", { staticClass: "text-2xl font-light mb-11 md:mb-28 lg:mb-36" }, [
       _vm._v("Erzähl Travelo deine Geschichte."),
@@ -84670,7 +84675,7 @@ var render = function () {
       _c(
         "form",
         {
-          staticClass: "lg:flex w-full flex-row-reverse justify-between",
+          staticClass: "mb-11 lg:flex w-full flex-row-reverse justify-between",
           on: {
             submit: function ($event) {
               $event.preventDefault()
@@ -84678,7 +84683,7 @@ var render = function () {
           },
         },
         [
-          _c("div", { staticClass: "m-4 lg:w-2/5" }, [
+          _c("div", { staticClass: "lg:w-2/5 mb-11" }, [
             _c("label", { staticClass: "inline-block mb-2 text-gray-500" }, [
               _vm._v("Upload\n                        Image(jpg,png)"),
             ]),
@@ -84702,7 +84707,7 @@ var render = function () {
                       },
                       [
                         _c("img", {
-                          staticClass: "absolute inset-0 w-full h-32",
+                          staticClass: "absolute inset-0 w-full",
                           attrs: { id: "preview" },
                         }),
                         _vm._v(" "),
@@ -84760,9 +84765,11 @@ var render = function () {
           _vm._v(" "),
           _c("div", { staticClass: "lg:w-2/5" }, [
             _c("div", { staticClass: "flex flex-col md:flex-row mb-4" }, [
-              _c("label", { staticClass: "md:w-20", attrs: { for: "title" } }, [
-                _vm._v("Title"),
-              ]),
+              _c(
+                "label",
+                { staticClass: "md:w-20 lg:w-32", attrs: { for: "title" } },
+                [_vm._v("Title")]
+              ),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -84773,7 +84780,7 @@ var render = function () {
                     expression: "newPost.title",
                   },
                 ],
-                staticClass: "border-b-2 pl-2 pb-0.5",
+                staticClass: "border-b-2 pl-2 pb-0.5 pt-2 md:pt-0 lg:w-full",
                 attrs: { id: "title", type: "text" },
                 domProps: { value: _vm.newPost.title },
                 on: {
@@ -84790,7 +84797,7 @@ var render = function () {
             _c("div", { staticClass: "flex flex-col md:flex-row mb-4" }, [
               _c(
                 "label",
-                { staticClass: "md:w-20", attrs: { for: "subtitle" } },
+                { staticClass: "md:w-20 lg:w-32", attrs: { for: "subtitle" } },
                 [_vm._v("Subtitle")]
               ),
               _vm._v(" "),
@@ -84803,7 +84810,7 @@ var render = function () {
                     expression: "newPost.subtitle",
                   },
                 ],
-                staticClass: "border-b-2 pl-2 pb-0.5 pt-2 md:pt-0",
+                staticClass: "border-b-2 pl-2 pb-0.5 pt-2 md:pt-0 lg:w-full",
                 attrs: { id: "subtitle", type: "text", required: "" },
                 domProps: { value: _vm.newPost.subtitle },
                 on: {
@@ -84820,7 +84827,10 @@ var render = function () {
             _c("div", { staticClass: "flex flex-col md:flex-row mb-4" }, [
               _c(
                 "label",
-                { staticClass: "md:w-20", attrs: { for: "post-content" } },
+                {
+                  staticClass: "md:w-20 lg:w-32",
+                  attrs: { for: "post-content" },
+                },
                 [_vm._v("Post Body")]
               ),
               _vm._v(" "),
@@ -84833,8 +84843,8 @@ var render = function () {
                     expression: "newPost.body",
                   },
                 ],
-                staticClass: "border-b-2",
-                attrs: { id: "body", type: "text", rows: "5", required: "" },
+                staticClass: "border-b-2 pl-2 pb-0.5 pt-2 md:pt-0 lg:w-full",
+                attrs: { id: "body", type: "text", rows: "15", required: "" },
                 domProps: { value: _vm.newPost.body },
                 on: {
                   input: function ($event) {
@@ -84848,7 +84858,11 @@ var render = function () {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "flex flex-col md:flex-row mb-4" }, [
-              _c("label", { attrs: { for: "country" } }, [_vm._v("Country")]),
+              _c(
+                "label",
+                { staticClass: "md:w-20 lg:w-32", attrs: { for: "country" } },
+                [_vm._v("Country")]
+              ),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -84859,7 +84873,7 @@ var render = function () {
                     expression: "newPost.country",
                   },
                 ],
-                staticClass: "border-b-2",
+                staticClass: "border-b-2 pl-2 pb-0.5 pt-2 md:pt-0 lg:w-full",
                 attrs: {
                   id: "country",
                   type: "text",
@@ -84879,7 +84893,11 @@ var render = function () {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "flex flex-col md:flex-row mb-4" }, [
-              _c("label", { attrs: { for: "city" } }, [_vm._v("City")]),
+              _c(
+                "label",
+                { staticClass: "md:w-20 lg:w-32", attrs: { for: "city" } },
+                [_vm._v("City")]
+              ),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -84890,7 +84908,7 @@ var render = function () {
                     expression: "newPost.city",
                   },
                 ],
-                staticClass: "border-b-2",
+                staticClass: "border-b-2 pl-2 pb-0.5 pt-2 md:pt-0 lg:w-full",
                 attrs: {
                   id: "city",
                   type: "text",
@@ -84913,10 +84931,15 @@ var render = function () {
       ),
     ]),
     _vm._v(" "),
-    _c("div", [
+    _c("div", { staticClass: "text-center lg:text-left" }, [
       _c(
         "button",
-        { attrs: { type: "button" }, on: { click: _vm.createPost } },
+        {
+          staticClass:
+            "focus:outline-none text-white bg-yellow hover:bg-yellowDark focus:ring-4 focus:ring-yellow font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900",
+          attrs: { type: "button" },
+          on: { click: _vm.createPost },
+        },
         [_vm._v("Create Post\n            ")]
       ),
     ]),

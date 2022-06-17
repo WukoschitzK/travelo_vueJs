@@ -9,6 +9,7 @@ module.exports = {
             colors: {
                 mainText: "#001427",
                 yellow:  "#E6A900",
+                yellowDark: "#D9A106"
             },
             fontFamily: {
                 body: ["Poppins", "Arial", "sans-serif"],
