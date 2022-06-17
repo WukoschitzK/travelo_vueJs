@@ -84489,7 +84489,7 @@ var render = function () {
                 "div",
                 {
                   staticClass:
-                    "w-1/5 md:w-full divide-y col-span-2 xl:col-span-2 text-center font-bold text-2xl md:px-4 lg:px-6",
+                    "w-full divide-y col-span-2 xl:col-span-2 text-center font-bold text-2xl md:px-4 lg:px-6",
                 },
                 [
                   _c("div", [
@@ -84510,7 +84510,7 @@ var render = function () {
                 },
                 [
                   _c("div", [
-                    _c("div", { staticClass: "font-bold text-xs" }, [
+                    _c("div", { staticClass: "font-bold text-sm" }, [
                       _c("div", [
                         _vm._v(_vm._s(post.country) + " " + _vm._s(post.city)),
                       ]),
@@ -84675,7 +84675,8 @@ var render = function () {
       _c(
         "form",
         {
-          staticClass: "mb-11 lg:flex w-full flex-row-reverse justify-between",
+          staticClass:
+            "lg:px-20 mb-11 lg:flex w-full flex-row-reverse justify-between",
           on: {
             submit: function ($event) {
               $event.preventDefault()
@@ -84764,7 +84765,7 @@ var render = function () {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "lg:w-2/5" }, [
-            _c("div", { staticClass: "flex flex-col md:flex-row mb-4" }, [
+            _c("div", { staticClass: "flex flex-col lg:flex-row mb-4" }, [
               _c(
                 "label",
                 { staticClass: "md:w-20 lg:w-32", attrs: { for: "title" } },
@@ -84794,7 +84795,7 @@ var render = function () {
               }),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "flex flex-col md:flex-row mb-4" }, [
+            _c("div", { staticClass: "flex flex-col lg:flex-row mb-4" }, [
               _c(
                 "label",
                 { staticClass: "md:w-20 lg:w-32", attrs: { for: "subtitle" } },
@@ -84824,7 +84825,7 @@ var render = function () {
               }),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "flex flex-col md:flex-row mb-4" }, [
+            _c("div", { staticClass: "flex flex-col lg:flex-row mb-4" }, [
               _c(
                 "label",
                 {
@@ -84857,7 +84858,7 @@ var render = function () {
               }),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "flex flex-col md:flex-row mb-4" }, [
+            _c("div", { staticClass: "flex flex-col lg:flex-row mb-4" }, [
               _c(
                 "label",
                 { staticClass: "md:w-20 lg:w-32", attrs: { for: "country" } },
@@ -84892,7 +84893,7 @@ var render = function () {
               }),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "flex flex-col md:flex-row mb-4" }, [
+            _c("div", { staticClass: "flex flex-col lg:flex-row mb-4" }, [
               _c(
                 "label",
                 { staticClass: "md:w-20 lg:w-32", attrs: { for: "city" } },

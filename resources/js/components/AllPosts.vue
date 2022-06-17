@@ -7,14 +7,14 @@
         <div class="xl:flex flex-wrap">
             <div v-for="(post, i) in posts" :key=i class="xl:max-w-1/2">
                 <div class="grid grid-cols-12 gap-4 divide-y divide-y-reverse mb-9 xl:px-11">
-                    <div class="w-1/5 md:w-full divide-y col-span-2 xl:col-span-2 text-center font-bold text-2xl md:px-4 lg:px-6">
+                    <div class="w-full divide-y col-span-2 xl:col-span-2 text-center font-bold text-2xl md:px-4 lg:px-6">
                         <div>{{ splitDate(post.created_at).day }}</div>
                         <div>{{ splitDate(post.created_at).year }}</div>
                     </div>
 
                     <div class="col-span-10 xl:col-span-10 flex justify-between">
                         <div>
-                            <div class="font-bold text-xs">
+                            <div class="font-bold text-sm">
                                 <div>{{ post.country }} {{ post.city }}</div>
                             </div>
     <!--                        <img v-if="post.post_images.length" :src="post.post_images[0].post_image_path">-->

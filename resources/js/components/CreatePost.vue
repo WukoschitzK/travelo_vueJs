@@ -11,7 +11,7 @@
 
 
         <div>
-            <form @submit.prevent class="mb-11 lg:flex w-full flex-row-reverse justify-between">
+            <form @submit.prevent class="lg:px-20 mb-11 lg:flex w-full flex-row-reverse justify-between">
 
                 <div class="lg:w-2/5 mb-11">
                     <label class="inline-block mb-2 text-gray-500">Upload
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="lg:w-2/5">
-                    <div class="flex flex-col md:flex-row mb-4">
+                    <div class="flex flex-col lg:flex-row mb-4">
                         <label for="title" class="md:w-20 lg:w-32">Title</label>
                         <input
                             v-model="newPost.title"
@@ -47,7 +47,7 @@
                             class="border-b-2 pl-2 pb-0.5 pt-2 md:pt-0 lg:w-full"
                         >
                     </div>
-                    <div class="flex flex-col md:flex-row mb-4">
+                    <div class="flex flex-col lg:flex-row mb-4">
                         <label for="subtitle" class="md:w-20 lg:w-32">Subtitle</label>
                         <input
                             v-model="newPost.subtitle"
@@ -57,12 +57,12 @@
                             class="border-b-2 pl-2 pb-0.5 pt-2 md:pt-0 lg:w-full"
                         >
                     </div>
-                    <div class="flex flex-col md:flex-row mb-4">
+                    <div class="flex flex-col lg:flex-row mb-4">
                         <label for="post-content" class="md:w-20 lg:w-32">Post Body</label>
                         <textarea id="body" v-model="newPost.body" type="text" rows="15" required class="border-b-2 pl-2 pb-0.5 pt-2 md:pt-0 lg:w-full"/>
                     </div>
 
-                    <div class="flex flex-col md:flex-row mb-4">
+                    <div class="flex flex-col lg:flex-row mb-4">
                         <label for="country" class="md:w-20 lg:w-32">Country</label>
                         <input
                             v-model="newPost.country"
@@ -73,7 +73,7 @@
                             class="border-b-2 pl-2 pb-0.5 pt-2 md:pt-0 lg:w-full"
                         >
                     </div>
-                    <div class="flex flex-col md:flex-row mb-4">
+                    <div class="flex flex-col lg:flex-row mb-4">
                         <label for="city" class="md:w-20 lg:w-32">City</label>
                         <input
                             v-model="newPost.city"
