@@ -7,10 +7,10 @@
         </svg>
 
         <h2 class="text-yellow font-bold text-4xl lg:text-6xl mb-2.5">Dein Eintrag zählt.</h2>
-        <p class="text-2xl font-light mb-11 md:mb-28 lg:mb-36">Erzähl Travelo deine Geschichte.</p>
+        <p class="text-2xl font-light mb-11 lg:mb-28">Erzähl Travelo deine Geschichte.</p>
 
 
-        <div>
+        <div class="lg:mb-28">
             <form @submit.prevent class="lg:px-20 mb-11 lg:flex w-full flex-row-reverse justify-between">
 
                 <div class="lg:w-2/5 mb-11">
@@ -44,7 +44,7 @@
                             v-model="newPost.title"
                             id="title"
                             type="text"
-                            class="border-b-2 pl-2 pb-0.5 pt-2 md:pt-0 lg:w-full"
+                            class="border-b-2 pl-2 pb-0.5 pt-2 lg:pt-0 lg:w-full"
                         >
                     </div>
                     <div class="flex flex-col lg:flex-row mb-4">
@@ -54,12 +54,12 @@
                             id="subtitle"
                             type="text"
                             required
-                            class="border-b-2 pl-2 pb-0.5 pt-2 md:pt-0 lg:w-full"
+                            class="border-b-2 pl-2 pb-0.5 pt-2 lg:pt-0 lg:w-full"
                         >
                     </div>
                     <div class="flex flex-col lg:flex-row mb-4">
                         <label for="post-content" class="md:w-20 lg:w-32">Post Body</label>
-                        <textarea id="body" v-model="newPost.body" type="text" rows="15" required class="border-b-2 pl-2 pb-0.5 pt-2 md:pt-0 lg:w-full"/>
+                        <textarea id="body" v-model="newPost.body" type="text" rows="15" required class="border-b-2 pl-2 pb-0.5 pt-2 lg:pt-0 lg:w-full"/>
                     </div>
 
                     <div class="flex flex-col lg:flex-row mb-4">
@@ -70,7 +70,7 @@
                             type="text"
                             placeholder="Post Country"
                             required
-                            class="border-b-2 pl-2 pb-0.5 pt-2 md:pt-0 lg:w-full"
+                            class="border-b-2 pl-2 pb-0.5 pt-2 lg:pt-0 lg:w-full"
                         >
                     </div>
                     <div class="flex flex-col lg:flex-row mb-4">
@@ -81,7 +81,7 @@
                             type="text"
                             placeholder="Post City"
                             required
-                            class="border-b-2 pl-2 pb-0.5 pt-2 md:pt-0 lg:w-full"
+                            class="border-b-2 pl-2 pb-0.5 pt-2 lg:pt-0 lg:w-full"
                         >
                     </div>
                 </div>

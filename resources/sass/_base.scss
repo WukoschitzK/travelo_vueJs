@@ -1,9 +1,10 @@
 body {
-    @apply font-sans;
+    //@apply font-poppins;
+    font-family: "Poppins", sans-serif;
 }
 
 p {
-    color:red;
+    color:red; !important;
 }
 
 html {

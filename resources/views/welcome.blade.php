@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Travelo!</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+    </style>
 </head>
+
 <body>
 <div>
     <div class="lg:flex flex-row-reverse justify-between items-center min-h-screen">
@@ -31,5 +34,5 @@
     </div>
 </div>
 </body>
-<script src="{{ asset('js/app.js') }}" defer></script>
+{{--<script src="{{ asset('js/app.js') }}" defer></script>--}}
 </html>

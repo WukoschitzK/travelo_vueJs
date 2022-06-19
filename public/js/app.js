@@ -84469,13 +84469,13 @@ var render = function () {
       [_vm._v("What's new!")]
     ),
     _vm._v(" "),
-    _c("p", { staticClass: "text-2xl font-light mb-11 md:mb-28 lg:mb-36" }, [
+    _c("p", { staticClass: "text-2xl font-light mb-11 lg:mb-28" }, [
       _vm._v("Die letzten Einträge bei Travelo."),
     ]),
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "xl:flex flex-wrap" },
+      { staticClass: "xl:flex flex-wrap lg:mb-28" },
       _vm._l(_vm.posts, function (post, i) {
         return _c("div", { key: i, staticClass: "xl:max-w-1/2" }, [
           _c(
@@ -84667,11 +84667,11 @@ var render = function () {
       [_vm._v("Dein Eintrag zählt.")]
     ),
     _vm._v(" "),
-    _c("p", { staticClass: "text-2xl font-light mb-11 md:mb-28 lg:mb-36" }, [
+    _c("p", { staticClass: "text-2xl font-light mb-11 lg:mb-28" }, [
       _vm._v("Erzähl Travelo deine Geschichte."),
     ]),
     _vm._v(" "),
-    _c("div", [
+    _c("div", { staticClass: "lg:mb-28" }, [
       _c(
         "form",
         {
@@ -84781,7 +84781,7 @@ var render = function () {
                     expression: "newPost.title",
                   },
                 ],
-                staticClass: "border-b-2 pl-2 pb-0.5 pt-2 md:pt-0 lg:w-full",
+                staticClass: "border-b-2 pl-2 pb-0.5 pt-2 lg:pt-0 lg:w-full",
                 attrs: { id: "title", type: "text" },
                 domProps: { value: _vm.newPost.title },
                 on: {
@@ -84811,7 +84811,7 @@ var render = function () {
                     expression: "newPost.subtitle",
                   },
                 ],
-                staticClass: "border-b-2 pl-2 pb-0.5 pt-2 md:pt-0 lg:w-full",
+                staticClass: "border-b-2 pl-2 pb-0.5 pt-2 lg:pt-0 lg:w-full",
                 attrs: { id: "subtitle", type: "text", required: "" },
                 domProps: { value: _vm.newPost.subtitle },
                 on: {
@@ -84844,7 +84844,7 @@ var render = function () {
                     expression: "newPost.body",
                   },
                 ],
-                staticClass: "border-b-2 pl-2 pb-0.5 pt-2 md:pt-0 lg:w-full",
+                staticClass: "border-b-2 pl-2 pb-0.5 pt-2 lg:pt-0 lg:w-full",
                 attrs: { id: "body", type: "text", rows: "15", required: "" },
                 domProps: { value: _vm.newPost.body },
                 on: {
@@ -84874,7 +84874,7 @@ var render = function () {
                     expression: "newPost.country",
                   },
                 ],
-                staticClass: "border-b-2 pl-2 pb-0.5 pt-2 md:pt-0 lg:w-full",
+                staticClass: "border-b-2 pl-2 pb-0.5 pt-2 lg:pt-0 lg:w-full",
                 attrs: {
                   id: "country",
                   type: "text",
@@ -84909,7 +84909,7 @@ var render = function () {
                     expression: "newPost.city",
                   },
                 ],
-                staticClass: "border-b-2 pl-2 pb-0.5 pt-2 md:pt-0 lg:w-full",
+                staticClass: "border-b-2 pl-2 pb-0.5 pt-2 lg:pt-0 lg:w-full",
                 attrs: {
                   id: "city",
                   type: "text",

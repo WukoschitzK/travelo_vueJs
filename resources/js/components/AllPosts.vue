@@ -2,9 +2,9 @@
     <div>
 
         <h2 class="text-yellow font-bold text-4xl lg:text-6xl mb-2.5">What's new!</h2>
-        <p class="text-2xl font-light mb-11 md:mb-28 lg:mb-36">Die letzten Einträge bei Travelo.</p>
+        <p class="text-2xl font-light mb-11 lg:mb-28">Die letzten Einträge bei Travelo.</p>
 
-        <div class="xl:flex flex-wrap">
+        <div class="xl:flex flex-wrap lg:mb-28">
             <div v-for="(post, i) in posts" :key=i class="xl:max-w-1/2">
                 <div class="grid grid-cols-12 gap-4 divide-y divide-y-reverse mb-9 xl:px-11">
                     <div class="w-full divide-y col-span-2 xl:col-span-2 text-center font-bold text-2xl md:px-4 lg:px-6">
