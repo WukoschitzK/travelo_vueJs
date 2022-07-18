@@ -17,8 +17,7 @@
                             <div class="font-bold text-sm">
                                 <div>{{ post.country }} {{ post.city }}</div>
                             </div>
-    <!--                        <img v-if="post.post_images.length" :src="post.post_images[0].post_image_path">-->
-                            <img src="../../img/header-img.jpg">
+                            <img :src="'/storage/images/post_images/'+ post.image_path" alt="Picture of Post" />
 
                             <div class="font-bold text-xl">{{ post.title }}</div>
                             <div class="flex justify-between">
@@ -66,7 +65,7 @@ export default {
         };
     },
     computed: {
-        ...mapState(['posts'])
+        ...mapState(['posts']),
     },
     beforeMount() {
         this.$store.dispatch('getAllPosts');

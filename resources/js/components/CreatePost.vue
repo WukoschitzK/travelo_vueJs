@@ -1,5 +1,5 @@
 <template>
-    <div :key="componentKey">
+    <div>
 
         <svg v-if="loader" role="status" class="w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
@@ -11,14 +11,14 @@
 
 
         <div class="lg:mb-28">
-            <form @submit.prevent class="lg:px-20 mb-11 lg:flex w-full flex-row-reverse justify-between">
+            <form @submit.prevent enctype="multipart/form-data" class="lg:px-20 mb-11 lg:flex w-full flex-row-reverse justify-between">
 
                 <div class="lg:w-2/5 mb-11">
                     <label class="inline-block mb-2 text-gray-500">Upload
                         Image(jpg,png)</label>
                     <div class="flex items-center justify-center w-full">
                         <label
-                            class="flex flex-col w-full h-32 border-4 border-dashed hover:bg-gray-100 hover:border-gray-300">
+                            class="flex flex-col w-full h-32 border-4 border-dashed hover:bg-gray-100 hover:border-gray-300" for="image_path">
                             <div class="relative flex flex-col items-center justify-center pt-7">
                                 <img id="preview" class="absolute inset-0 w-full">
                                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +32,7 @@
                                     Select a photo</p>
                             </div>
 
-                            <input type="file" class="opacity-0" accept="image/*" @change="showPreview(event)" />
+                            <input name="image_path" id="image_path" type="file" class="opacity-0" accept="image/*" v-on:change="onImageChange"/>
                         </label>
                     </div>
                 </div>
@@ -148,7 +148,7 @@ export default {
                 body: "",
                 country: "",
                 city: "",
-                image:""
+                image_path:""
             },
             loader: false,
         };
@@ -156,9 +156,18 @@ export default {
     computed: {},
     mounted () {},
     methods: {
+        onImageChange(e){
+            console.log("files",e.target.files[0]);
+            this.newPost.image_path = e.target.files[0];
+            console.log("this image",this.newPost);
+        },
         createPost (e) {
-            e.preventDefault()
-            const that = this
+            e.preventDefault();
+            console.log("test");
+            const config = {
+                headers: { 'content-type': 'multipart/form-data' }
+            }
+
             this.isCreatingPost = true
             const formData = new FormData()
             formData.append('title', this.newPost.title)
@@ -166,10 +175,10 @@ export default {
             formData.append('body', this.newPost.body)
             formData.append('country', this.newPost.country)
             formData.append('city', this.newPost.city)
-            formData.append('image', this.newPost.image)
+            formData.append('image_path', this.newPost.image_path)
             this.loader = true;
-
-            axios.post('/api/create-post', formData).then(() => {
+            console.log("formdata", formData);
+            axios.post('/api/create-post', formData, config).then(() => {
                 this.loader = false;
             })
         }

@@ -9,9 +9,12 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'subtitle', 'body', 'country', 'city'];
+    protected $fillable = ['title', 'subtitle', 'body', 'country', 'city', 'image_path'];
 
-    public function post_images() {
-        return $this->hasMany('App\Models\PostImage');
+    public function getImageUrlAttribute() {
+
+        return $this->image_path ? asset('storage/images/' . $this->image_path) : null;
+
     }
+
 }

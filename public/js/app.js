@@ -3898,7 +3898,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -4118,7 +4117,7 @@ __webpack_require__.r(__webpack_exports__);
         body: "",
         country: "",
         city: "",
-        image: ""
+        image_path: ""
       },
       loader: false
     };
@@ -4126,11 +4125,21 @@ __webpack_require__.r(__webpack_exports__);
   computed: {},
   mounted: function mounted() {},
   methods: {
+    onImageChange: function onImageChange(e) {
+      console.log("files", e.target.files[0]);
+      this.newPost.image_path = e.target.files[0];
+      console.log("this image", this.newPost);
+    },
     createPost: function createPost(e) {
       var _this = this;
 
       e.preventDefault();
-      var that = this;
+      console.log("test");
+      var config = {
+        headers: {
+          'content-type': 'multipart/form-data'
+        }
+      };
       this.isCreatingPost = true;
       var formData = new FormData();
       formData.append('title', this.newPost.title);
@@ -4138,9 +4147,10 @@ __webpack_require__.r(__webpack_exports__);
       formData.append('body', this.newPost.body);
       formData.append('country', this.newPost.country);
       formData.append('city', this.newPost.city);
-      formData.append('image', this.newPost.image);
+      formData.append('image_path', this.newPost.image_path);
       this.loader = true;
-      axios.post('/api/create-post', formData).then(function () {
+      console.log("formdata", formData);
+      axios.post('/api/create-post', formData, config).then(function () {
         _this.loader = false;
       });
     }
@@ -64705,16 +64715,6 @@ exports["default"] = {
 
 /***/ }),
 
-/***/ "./resources/img/header-img.jpg":
-/*!**************************************!*\
-  !*** ./resources/img/header-img.jpg ***!
-  \**************************************/
-/***/ ((module) => {
-
-module.exports = "/images/header-img.jpg?46c4a24bbd5751cf3d221ef80e8ace63";
-
-/***/ }),
-
 /***/ "./node_modules/lodash/lodash.js":
 /*!***************************************!*\
   !*** ./node_modules/lodash/lodash.js ***!
@@ -84517,7 +84517,10 @@ var render = function () {
                     ]),
                     _vm._v(" "),
                     _c("img", {
-                      attrs: { src: __webpack_require__(/*! ../../img/header-img.jpg */ "./resources/img/header-img.jpg") },
+                      attrs: {
+                        src: "/storage/images/post_images/" + post.image_path,
+                        alt: "Picture of Post",
+                      },
                     }),
                     _vm._v(" "),
                     _c("div", { staticClass: "font-bold text-xl" }, [
@@ -84629,7 +84632,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { key: _vm.componentKey }, [
+  return _c("div", [
     _vm.loader
       ? _c(
           "svg",
@@ -84677,6 +84680,7 @@ var render = function () {
         {
           staticClass:
             "lg:px-20 mb-11 lg:flex w-full flex-row-reverse justify-between",
+          attrs: { enctype: "multipart/form-data" },
           on: {
             submit: function ($event) {
               $event.preventDefault()
@@ -84698,6 +84702,7 @@ var render = function () {
                   {
                     staticClass:
                       "flex flex-col w-full h-32 border-4 border-dashed hover:bg-gray-100 hover:border-gray-300",
+                    attrs: { for: "image_path" },
                   },
                   [
                     _c(
@@ -84751,12 +84756,13 @@ var render = function () {
                     _vm._v(" "),
                     _c("input", {
                       staticClass: "opacity-0",
-                      attrs: { type: "file", accept: "image/*" },
-                      on: {
-                        change: function ($event) {
-                          return _vm.showPreview(_vm.event)
-                        },
+                      attrs: {
+                        name: "image_path",
+                        id: "image_path",
+                        type: "file",
+                        accept: "image/*",
                       },
+                      on: { change: _vm.onImageChange },
                     }),
                   ]
                 ),

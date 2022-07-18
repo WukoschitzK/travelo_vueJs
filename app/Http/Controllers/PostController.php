@@ -3,16 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use App\Models\PostImage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
     public function index() {
-        $posts = Post::with('post_images')->orderBy('created_at','desc')->get();
-//        return view('welcome', compact('posts'));
+        $posts = Post::all();
         return response()->json($posts);
-
     }
 
     public function store(Request $request) {
@@ -21,47 +19,19 @@ class PostController extends Controller
             'subtitle' => 'required',
             'body' => 'required',
             'country' => 'required',
-            'city' => 'required'
+            'city' => 'required',
+            'image_path' => 'nullable|mimes:jpeg,png'
         ]);
-
-//        $post = new Post();
-//        $post->title = $request->get('title');
-//        $post->subtitle = $request->get('subtitle');
-//        $post->body = $request->get('body');
-//        $post->country = $request->get('country');
-//        $post->city = $request->get('city');
-//        $post->save();
-
-//        $post = Post::create([
-//            'title' => $request->title,
-//            'subtitle' => $request->subtitle,
-//            'body' => $request->body,
-//            'country' => $request->country,
-//            'city' => $request->city,
-//        ]);
-
-//        $images = $request->images;
-//
-//        if($request->images != null) {
-//            foreach($images as $image) {
-//                $imagePath = Storage::disk('uploads')->put('posts/' . $post->id, $image);
-//                PostImage::create([
-//                    'post_image_path' => '/uploads/' . $imagePath,
-//                    'post_id' => $post->id
-//                ]);
-//            }
-//        }
-
 
         $post = new Post();
         $post->fill($request->all());
 
         //image upload
 
-        if ($image = $request->file('image')) {
+        if ($image = $request->file('image_path')) {
 
             $name = Str::random(16) . '.' . $image->getClientOriginalExtension();
-            $image->storePubliclyAs('public/images/recipe_images', $name);
+            $image->storePubliclyAs('public/images/post_images', $name);
             $post->image_path = $name;
         }
 

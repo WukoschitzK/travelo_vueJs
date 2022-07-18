@@ -7,15 +7,17 @@ module.exports = {
         "./resources/**/*.vue",
     ],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                mainText: "#001427",
+                yellow:  "#E6A900",
+                yellowDark: "#D9A106"
+            }
+        },
         fontFamily: {
             sans: ["Poppins", "Arial", "sans-serif"],
         },
-        colors: {
-            mainText: "#001427",
-            yellow:  "#E6A900",
-            yellowDark: "#D9A106"
-        },
+
 
         maxWidth: {
             '1/2': '50%',
