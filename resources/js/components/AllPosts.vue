@@ -17,7 +17,7 @@
                             <div class="font-bold text-sm">
                                 <div>{{ post.country }} {{ post.city }}</div>
                             </div>
-                            <img :src="'/storage/images/post_images/'+ post.image_path" alt="Picture of Post" />
+                            <img :src="post.image_path" alt="Picture of Post" />
 
                             <div class="font-bold text-xl">{{ post.title }}</div>
                             <div class="flex justify-between">

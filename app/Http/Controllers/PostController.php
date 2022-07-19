@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class PostController extends Controller
@@ -31,8 +32,9 @@ class PostController extends Controller
         if ($image = $request->file('image_path')) {
 
             $name = Str::random(16) . '.' . $image->getClientOriginalExtension();
-            $image->storePubliclyAs('public/images/post_images', $name);
-            $post->image_path = $name;
+            $path = Storage::disk("s3")->putFileAs(config("app.name") . "/images/post_images", $image, $name);
+            //$image->storePubliclyAs('public/images/post_images', $name);
+            $post->image_path = $path;
         }
 
         $post->save();
