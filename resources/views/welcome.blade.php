@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Travelo!</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <style>
         /*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');*/
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
@@ -19,7 +19,7 @@
 <body>
 <div id="app" >
     <div class="lg:flex flex-row-reverse justify-between items-center min-h-screen">
-        <div class='bg-black bg-opacity-25 h-72 md:h-96 lg:min-h-screen lg:w-4/5 relative mb-9'>
+        <div class='bg-black bg-opacity-25 h-72 md:h-96 lg:min-h-screen lg:w-full relative mb-9'>
             <img src="../img/header-img.jpg" alt="car" class="w-full h-full object-cover absolute object-left mix-blend-overlay">
         </div>
 
@@ -40,5 +40,5 @@
     </div>
 </div>
 </body>
-<script src="{{ asset('js/app.js') }}" defer></script>
+<script src="{{ mix('js/app.js') }}" defer></script>
 </html>
