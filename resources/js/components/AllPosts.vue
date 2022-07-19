@@ -68,7 +68,7 @@ export default {
         ...mapState(['posts']),
     },
     beforeMount() {
-        this.$store.dispatch('getAllPosts');
+        //this.$store.dispatch('getAllPosts');
     },
     methods: {
         splitDate(date) {

@@ -12,7 +12,7 @@ export default new Vuex.Store({
 
     actions: {
         async getAllPosts({ commit }) {
-            return commit('setPosts', await api.get("/api/posts/"))
+            return commit('setPosts', await axios.get("/api/posts"))
         },
     },
 
