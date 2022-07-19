@@ -101,7 +101,10 @@ export default {
         getPosts() {
             axios
                 .get(
-                    "/api/posts/"
+                    "/api/posts/",
+                    {
+                        headers: { 'Accept': 'application/json' }
+                    }
                 )
                 .then((res) => {
                     this.posts = res.data;
