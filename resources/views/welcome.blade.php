@@ -28,7 +28,7 @@
                 Travelo?</h1>
             <p class="text-3xl md:text-3xl lg:text-4xl font-light mb-9">Teile dein Erlebnis mit
                 der ganzen Welt.</p>
-            <p class="text-xl md:text-2xl font-light md:leading-10">Travelo ist das Online-Tagebuch für reisende aus aller Welt. Teile deine Reiseerlebnisse mit unserer Community. Travelon!</p>
+            <p class="text-xl md:text-2xl font-light md:leading-10">Travelo ist das Online-Tagebuch für Reisende aus aller Welt. Teile deine Reiseerlebnisse mit unserer Community. Travelon!</p>
         </div>
 
 
