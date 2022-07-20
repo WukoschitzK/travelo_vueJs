@@ -5,7 +5,7 @@
         <p class="text-2xl font-light mb-12 lg:mb-28">Die letzten Einträge bei Travelo.</p>
 
         <div class="xl:flex flex-wrap lg:mb-28">
-            <div v-for="(post, i) in posts" :key=i class="xl:max-w-1/2">
+            <div v-for="(post, i) in posts" :key=i class="xl:max-w-1/2 w-full">
                 <div class="grid grid-cols-12 gap-4 divide-y divide-y-reverse mb-12 xl:px-11">
                     <div class="w-full divide-y pt-2 col-span-2 xl:col-span-2 text-center font-bold text-2xl md:px-4 lg:px-6">
                         <div>{{ splitDate(post.created_at).day }}</div>

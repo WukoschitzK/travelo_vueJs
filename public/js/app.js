@@ -84472,7 +84472,7 @@ var render = function () {
       "div",
       { staticClass: "xl:flex flex-wrap lg:mb-28" },
       _vm._l(_vm.posts, function (post, i) {
-        return _c("div", { key: i, staticClass: "xl:max-w-1/2" }, [
+        return _c("div", { key: i, staticClass: "xl:max-w-1/2 w-full" }, [
           _c(
             "div",
             {
