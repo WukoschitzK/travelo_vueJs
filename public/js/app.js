@@ -84164,7 +84164,7 @@ var render = function () {
             "div",
             {
               staticClass:
-                "grid grid-cols-12 gap-4 divide-y divide-y-reverse mb-12 xl:px-11",
+                "grid grid-cols-12 gap-4 divide-y-reverse mb-12 xl:px-11",
             },
             [
               _c(
