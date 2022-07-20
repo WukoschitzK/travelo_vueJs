@@ -83,33 +83,6 @@
                         >
                     </div>
                 </div>
-
-<!--                <div>-->
-<!--                    <el-upload-->
-<!--                        action="https://jsonplaceholder.typicode.com/posts/"-->
-<!--                        list-type="picture-card"-->
-<!--                        :on-preview="handlePictureCardPreview"-->
-<!--                        :on-change="updateImageList"-->
-<!--                        :auto-upload="false"-->
-<!--                    >-->
-<!--                        <i class="el-icon-plus" />-->
-<!--                    </el-upload>-->
-<!--                    <el-dialog :visible.sync="dialogVisible">-->
-<!--                        <img width="100%" :src="dialogImageUrl" alt>-->
-<!--                    </el-dialog>-->
-<!--                </div>-->
-
-
-
-
-
-
-
-<!--                <input name="image" type="file" id="imageUpload" accept=".png, .jpg, .jpeg" />-->
-<!--                <label for="imageUpload"></label>-->
-
-
-
             </form>
         </div>
 
@@ -121,21 +94,10 @@
             >Create Post
             </button>
         </div>
-
-
-<!--        <div class="grid Submit&#45;&#45;button">-->
-<!--            <input-->
-<!--                type="submit"-->
-<!--                @click="savePost()"-->
-<!--                value="Submit!"-->
-<!--                class="Button justify-self-start mt-1"-->
-<!--            />-->
-<!--        </div>-->
     </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
 export default {
     name: 'create-post',
     data() {
@@ -147,21 +109,17 @@ export default {
                 country: "",
                 city: "",
                 image_path:""
-            },
-            loader: false,
+            }
         };
     },
     computed: {},
     mounted () {},
     methods: {
         onImageChange(e){
-            console.log("files",e.target.files[0]);
             this.newPost.image_path = e.target.files[0];
-            console.log("this image",this.newPost);
         },
         createPost (e) {
             e.preventDefault();
-            console.log("test");
             const config = {
                 headers: { 'content-type': 'multipart/form-data' }
             }
@@ -174,11 +132,9 @@ export default {
             formData.append('country', this.newPost.country)
             formData.append('city', this.newPost.city)
             formData.append('image_path', this.newPost.image_path)
-            this.loader = true;
-            console.log("formdata", formData);
-            axios.post('/api/create-post', formData, config).then(() => {
-                this.loader = false;
-            })
+            axios.post('/api/create-post', formData, config).then(
+                window.location.reload()
+            )
         }
     }
 }

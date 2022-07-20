@@ -6,12 +6,9 @@
 
 require('./bootstrap');
 
-// window.Vue = require('vue');
 import Vue from 'vue';
-
 import store from './store/index';
 import ElementUi from 'element-ui';
-// import 'element-ui/lib/theme-chalk/index.css';
 import 'element-ui/lib/theme-chalk/reset.css';
 
 
@@ -28,21 +25,14 @@ Vue.use(ElementUi);
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('all-posts', require('./components/AllPosts.vue').default);
 Vue.component('create-post', require('./components/CreatePost.vue').default);
-Vue.component('list-all-posts', require('./components/ListAllPosts.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
-// const app = new Vue({
-//     store,
-//     el: '#app',
-// });
 
 
 const app = {

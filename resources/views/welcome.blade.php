@@ -6,7 +6,6 @@
     <title>Travelo!</title>
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <style>
-        /*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');*/
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
         #app {
             font-family: Poppins, Helvetica, Arial, sans-serif;
@@ -33,7 +32,7 @@
 
 
     </div>
-{{--    <img src="../img/header-img.jpg" alt="car">--}}
+
     <div class="pt-14 md:pt-20 lg:pt-28 px-8 md:px-16 lg:px-28">
         <all-posts></all-posts>
         <create-post></create-post>

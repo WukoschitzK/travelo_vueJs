@@ -28,12 +28,10 @@ class PostController extends Controller
         $post->fill($request->all());
 
         //image upload
-
         if ($image = $request->file('image_path')) {
 
             $name = Str::random(16) . '.' . $image->getClientOriginalExtension();
             $path = Storage::disk("s3")->putFileAs(config("app.name") . "/images/post_images", $image, $name);
-            //$image->storePubliclyAs('public/images/post_images', $name);
             $post->image_path = $path;
         }
 

@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <h2 class="text-yellow font-bold text-4xl lg:text-6xl mb-2.5">What's new!</h2>
         <p class="text-2xl font-light mb-12 lg:mb-28">Die letzten Einträge bei Travelo.</p>
 
@@ -37,13 +36,7 @@
                                     <p>{{ currentPost.body }}</p>
                                 </div>
                             </div>
-
                         </div>
-
-
-
-
-
                     </div>
                 </div>
             </div>
@@ -66,9 +59,6 @@ export default {
     },
     computed: {
         ...mapState(['posts']),
-    },
-    beforeMount() {
-        //this.$store.dispatch('getAllPosts');
     },
     methods: {
         splitDate(date) {
@@ -105,9 +95,6 @@ export default {
                 )
                 .then((res) => {
                     this.posts = res.data;
-
-                    console.log(res.data);
-
                 });
         },
     },
