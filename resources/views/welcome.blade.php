@@ -19,16 +19,16 @@
 <body>
 <div id="app" >
     <div class="lg:flex flex-row-reverse justify-between items-center min-h-screen">
-        <div class='bg-black bg-opacity-25 h-72 md:h-96 lg:min-h-screen lg:w-full relative mb-9'>
+        <div class='bg-black bg-opacity-25 h-64 md:h-72 lg:min-h-screen lg:w-full relative mb-9 md:mb-20 lg:mb-0'>
             <img src="../img/header-img.jpg" alt="car" class="w-full h-full object-cover absolute object-left mix-blend-overlay">
         </div>
 
-        <div class="pl-8 md:pl-16 lg:pl-28 lg:pr-32">
-            <h1 class="font-poppins font-bold text-yellow text-4xl md:text-6xl mb-2.5">Bist du auch
+        <div class="pl-8 md:pl-16 lg:pl-28 lg:pr-28">
+            <h1 class="font-poppins font-bold text-yellow text-4xl lg:text-7xl md:text-6xl mb-2.5 lg:leading-tight	">Bist du auch
                 Travelo?</h1>
-            <p class="text-3xl md:text-4xl lg:text-5xl font-light mb-9">Teile dein Erlebnis mit
+            <p class="text-3xl md:text-3xl lg:text-4xl font-light mb-9">Teile dein Erlebnis mit
                 der ganzen Welt.</p>
-            <p class="text-xl md:text-3xl font-light">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
+            <p class="text-xl md:text-2xl font-light md:leading-10">Travelo ist das Online-Tagebuch für reisende aus aller Welt. Teile deine Reiseerlebnisse mit unserer Community. Travelon!</p>
         </div>
 
 

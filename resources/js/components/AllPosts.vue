@@ -2,26 +2,26 @@
     <div>
 
         <h2 class="text-yellow font-bold text-4xl lg:text-6xl mb-2.5">What's new!</h2>
-        <p class="text-2xl font-light mb-11 lg:mb-28">Die letzten Einträge bei Travelo.</p>
+        <p class="text-2xl font-light mb-12 lg:mb-28">Die letzten Einträge bei Travelo.</p>
 
         <div class="xl:flex flex-wrap lg:mb-28">
             <div v-for="(post, i) in posts" :key=i class="xl:max-w-1/2">
-                <div class="grid grid-cols-12 gap-4 divide-y divide-y-reverse mb-9 xl:px-11">
-                    <div class="w-full divide-y col-span-2 xl:col-span-2 text-center font-bold text-2xl md:px-4 lg:px-6">
+                <div class="grid grid-cols-12 gap-4 divide-y divide-y-reverse mb-12 xl:px-11">
+                    <div class="w-full divide-y pt-2 col-span-2 xl:col-span-2 text-center font-bold text-2xl md:px-4 lg:px-6">
                         <div>{{ splitDate(post.created_at).day }}</div>
                         <div>{{ splitDate(post.created_at).year }}</div>
                     </div>
 
                     <div class="col-span-10 xl:col-span-10 flex justify-between">
-                        <div>
-                            <div class="font-bold text-sm">
+                        <div class="w-full">
+                            <div class="font-bold text-sm mb-2">
                                 <div>{{ post.country }} {{ post.city }}</div>
                             </div>
-                            <img :src="post.image_path" alt="Picture of Post" />
+                            <img :src="post.image_path" alt="Picture of Post" class="w-full"/>
 
-                            <div class="font-bold text-xl">{{ post.title }}</div>
+                            <div class="font-bold text-xl mt-4">{{ post.title }}</div>
                             <div class="flex justify-between">
-                                <div class="font-light">{{ post.subtitle }}</div>
+                                <div class="font-light mb-4">{{ post.subtitle }}</div>
 
                                 <svg @click="viewPost(i)" class="self-end w-5" v-bind:class="{'fill-yellow transform rotate-180 transition duration-500 ease-in-out': postDialogVisible}" xmlns="http://www.w3.org/2000/svg" width="39" height="27" viewBox="0 0 39 27">
                                     <path id="Polygon_8" data-name="Polygon 8" d="M19.5,0,39,27H0Z" transform="translate(39 27) rotate(180)"/>

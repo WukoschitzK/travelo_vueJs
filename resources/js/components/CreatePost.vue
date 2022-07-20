@@ -39,7 +39,7 @@
 
                 <div class="lg:w-2/5">
                     <div class="flex flex-col lg:flex-row mb-4">
-                        <label for="title" class="md:w-20 lg:w-32">Title</label>
+                        <label for="title" class="md:w-20 lg:w-32 text-base">Title</label>
                         <input
                             v-model="newPost.title"
                             id="title"
@@ -48,7 +48,7 @@
                         >
                     </div>
                     <div class="flex flex-col lg:flex-row mb-4">
-                        <label for="subtitle" class="md:w-20 lg:w-32">Subtitle</label>
+                        <label for="subtitle" class="md:w-20 lg:w-32 text-base">Subtitle</label>
                         <input
                             v-model="newPost.subtitle"
                             id="subtitle"
@@ -58,28 +58,26 @@
                         >
                     </div>
                     <div class="flex flex-col lg:flex-row mb-4">
-                        <label for="post-content" class="md:w-20 lg:w-32">Post Body</label>
+                        <label for="post-content" class="md:w-20 lg:w-32 text-base">Body</label>
                         <textarea id="body" v-model="newPost.body" type="text" rows="15" required class="border-b-2 pl-2 pb-0.5 pt-2 lg:pt-0 lg:w-full"/>
                     </div>
 
                     <div class="flex flex-col lg:flex-row mb-4">
-                        <label for="country" class="md:w-20 lg:w-32">Country</label>
+                        <label for="country" class="md:w-20 lg:w-32 text-base">Country</label>
                         <input
                             v-model="newPost.country"
                             id="country"
                             type="text"
-                            placeholder="Post Country"
                             required
                             class="border-b-2 pl-2 pb-0.5 pt-2 lg:pt-0 lg:w-full"
                         >
                     </div>
                     <div class="flex flex-col lg:flex-row mb-4">
-                        <label for="city" class="md:w-20 lg:w-32">City</label>
+                        <label for="city" class="md:w-20 lg:w-32 text-base">City</label>
                         <input
                             v-model="newPost.city"
                             id="city"
                             type="text"
-                            placeholder="Post City"
                             required
                             class="border-b-2 pl-2 pb-0.5 pt-2 lg:pt-0 lg:w-full"
                         >
@@ -119,7 +117,7 @@
             <button
                 type="button"
                 @click="createPost"
-                class="focus:outline-none text-white bg-yellow hover:bg-yellowDark focus:ring-4 focus:ring-yellow font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
+                class="text-base focus:outline-none text-white bg-yellow hover:bg-yellowDark focus:ring-4 focus:ring-yellow font-medium rounded text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
             >Create Post
             </button>
         </div>
