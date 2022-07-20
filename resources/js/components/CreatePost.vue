@@ -11,7 +11,7 @@
 
 
         <div class="lg:mb-28">
-            <form @submit.prevent enctype="multipart/form-data" class="lg:px-20 mb-11 lg:flex w-full flex-row-reverse justify-between">
+            <form @submit.prevent enctype="multipart/form-data" class="mb-11 lg:flex w-full flex-row-reverse justify-between">
 
                 <div class="lg:w-2/5 mb-11">
                     <label class="inline-block mb-2 text-gray-500">Upload

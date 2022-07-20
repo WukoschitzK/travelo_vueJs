@@ -84671,8 +84671,7 @@ var render = function () {
       _c(
         "form",
         {
-          staticClass:
-            "lg:px-20 mb-11 lg:flex w-full flex-row-reverse justify-between",
+          staticClass: "mb-11 lg:flex w-full flex-row-reverse justify-between",
           attrs: { enctype: "multipart/form-data" },
           on: {
             submit: function ($event) {
